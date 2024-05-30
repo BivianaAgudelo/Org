@@ -1,7 +1,7 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./MiOrg.css"
 
-const Miorg = (props) => {
+const MiOrg = (props) => {
     
     // * Estado - hooks
     // * hook => useState
@@ -17,11 +17,11 @@ const Miorg = (props) => {
     // }
 
     return (
-        <secction className="orgSection">
+        <section className="orgSection">
             <h3 className="title">Mi organización</h3>
             <img src="/img/add.png" alt="add" onClick={props.cambiarMostrar}></img>
-        </secction>
+        </section>
     )
 }
 
-export default Miorg;
+export default MiOrg;
