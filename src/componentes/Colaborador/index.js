@@ -4,9 +4,10 @@ const Colaborador = (props) => {
 
     // ! Destructuración
     const { nombre, puesto, foto, equipo} = props.datos
+    const { colorPrimario } = props
     return (
         <div className="colaborador">
-            <div className="encabezado">
+            <div className="encabezado" style={{backgroundColor:colorPrimario}}>
                 <img src={foto} alt={nombre} />
             </div>
             <div className="info">
