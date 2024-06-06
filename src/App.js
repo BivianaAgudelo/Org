@@ -46,29 +46,8 @@ function App() {
       puesto: "Dev FullStack"
 }]);
 
-  // * Ternario --> condicion ? seMuestra : no SeMuestra
-
-  const cambiarMostrar = () => {
-    actualizarMostrar(!mostrarFormulario);
-  };
-
-  // * Lógica para registrar un colaborador
-
-  const registrarColaborador = (colaborador) => {
-    console.log("Nuevo Colaborador", colaborador);
-    // * Spread Operator
-    actualizarColaboradores([...colaboradores, colaborador]);
-  };
-
-  // * Lógica para eliminar un colaborador
-
-  const eliminarColaborador = () => {
-    console.log("Eliminar colaborador")
-  }
-
-  // * Lista de equipos
-
-  const equipos = [
+// * Lista de equipos
+const [equipos, actualizarEquipos] = useState([
     {
       titulo: "Programación",
       colorPrimario: "#57C278",
@@ -103,8 +82,40 @@ function App() {
       titulo: "Innovación y Gestión",
       colorPrimario: "#FF8A29",
       colorSecundario: "#FFEEDF",
-    },
-  ];
+    }
+])
+
+  // * Ternario --> condicion ? seMuestra : no SeMuestra
+
+  const cambiarMostrar = () => {
+    actualizarMostrar(!mostrarFormulario);
+  };
+
+  // * Lógica para registrar un colaborador
+
+  const registrarColaborador = (colaborador) => {
+    console.log("Nuevo Colaborador", colaborador);
+    // * Spread Operator
+    actualizarColaboradores([...colaboradores, colaborador]);
+  };
+
+  // * Lógica para eliminar un colaborador
+
+  const eliminarColaborador = () => {
+    console.log("Eliminar colaborador")
+  }
+
+  // * Actualixar color de equipo
+  const actualizarColor = (color, titulo) => {
+    console.log("Actualizar: ", color, titulo);
+    const equiposActualizados = equipos.map((equipo) => {
+      if (equipo.titulo === titulo) {
+        equipo.colorPrimario = color;
+      }
+      return equipo
+    })
+    actualizarEquipos(equiposActualizados);
+  }
 
   return (
     <div>
@@ -128,6 +139,7 @@ function App() {
             (colaborador) => colaborador.equipo === equipo.titulo
           )}
           eliminarColaborador = {eliminarColaborador}
+          actualizarColor = {actualizarColor}
         />
       ))}
 
