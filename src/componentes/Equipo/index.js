@@ -4,7 +4,7 @@ import Colaborador from "../Colaborador";
 const Equipo = (props) => {
     // ! Destructuración
     const { colorPrimario, colorSecundario, titulo } = props.datos;
-    const { colaboradores } = props;
+    const { colaboradores, eliminarColaborador } = props;
     console.log(colaboradores.length > 0);
 
     const estiloTitulo = { borderColor: colorPrimario };
@@ -22,7 +22,8 @@ const Equipo = (props) => {
                             <Colaborador 
                             datos={colaborador} 
                             key={index} 
-                            colorPrimario={colorPrimario}/>
+                            colorPrimario={colorPrimario}
+                            eliminarColaborador={eliminarColaborador}/>
                         ))}
                     </div>
                 </section>

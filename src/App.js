@@ -15,7 +15,36 @@ function App() {
       nombre: "Biviana Agudelo",
       puesto: "Programadora Web",
     },
-  ]);
+    {
+      equipo: "Front End",
+      foto: "https://github.com/harlandlohora.png",
+      nombre: "Harland Lohora",
+      puesto: "Instructor"
+    },
+    {
+      equipo: "Programación",
+      foto: "https://github.com/JuanDMeGon.png",
+      nombre: "Juan David",
+      puesto: "Staff e instructor"
+    },
+    {
+      equipo: "UX y Diseño",
+      foto: "https://github.com/JeanmarieAluraLatam.png",
+      nombre: "Jeanmarie Quijada",
+      puesto: "Instructora en Alura Latam"
+    },
+    {
+      equipo: "Programación",
+      foto: "https://github.com/christianpva.png",
+      nombre: "Christian Velasco",
+      puesto: "Head de Alura e Instructor"
+    },
+    {
+      equipo: "Innovación y Gestión",
+      foto: "https://github.com/JoseDarioGonzalezCha.png",
+      nombre: "Jose Gonzalez",
+      puesto: "Dev FullStack"
+}]);
 
   // * Ternario --> condicion ? seMuestra : no SeMuestra
 
@@ -30,6 +59,12 @@ function App() {
     // * Spread Operator
     actualizarColaboradores([...colaboradores, colaborador]);
   };
+
+  // * Lógica para eliminar un colaborador
+
+  const eliminarColaborador = () => {
+    console.log("Eliminar colaborador")
+  }
 
   // * Lista de equipos
 
@@ -92,6 +127,7 @@ function App() {
           colaboradores={colaboradores.filter(
             (colaborador) => colaborador.equipo === equipo.titulo
           )}
+          eliminarColaborador = {eliminarColaborador}
         />
       ))}
 
