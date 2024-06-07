@@ -133,6 +133,13 @@ const [equipos, actualizarEquipos] = useState([
     actualizarEquipos(equiposActualizados);
   }
 
+  // * Crear equipo
+  const crearEquipo = (nuevoEquipo) => {
+    console.log(nuevoEquipo);
+    actualizarEquipos([...equipos, { ...nuevoEquipo, id:uuid() }])
+  }
+
+
   return (
     <div>
       <Header />
@@ -142,6 +149,7 @@ const [equipos, actualizarEquipos] = useState([
         <Formulario
           equipos={equipos.map((equipo) => equipo.titulo)}
           registrarColaborador={registrarColaborador}
+          crearEquipo={crearEquipo}
         />
       )}
 
